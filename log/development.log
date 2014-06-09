@@ -1498,3 +1498,10 @@ Processing by PostsController#index as HTML
   Rendered layouts/_navigation.html.erb (0.2ms)
   Rendered layouts/_messages.html.erb (0.1ms)
 Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms)
+  [1m[36mUser Load (29.4ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT 1[0m
+  [1m[35mPost Load (23.8ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."user_id" = ?  [["user_id", 3]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (11.3ms)[0m  INSERT INTO "posts" ("created_at", "description", "title", "updated_at", "url", "user_id") VALUES (?, ?, ?, ?, ?, ?)  [["created_at", Mon, 09 Jun 2014 22:34:38 UTC +00:00], ["description", "tealeaf academy is an online programming bootcamp."], ["title", "learn ruby on rails"], ["updated_at", Mon, 09 Jun 2014 22:34:38 UTC +00:00], ["url", "www.gotealeaf.com"], ["user_id", 3]]
+  [1m[36m (2.5ms)[0m  [1mcommit transaction[0m
+  [1m[35mPost Load (0.4ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT 1[0m  [["id", 1]]
